@@ -35,10 +35,13 @@ class Land {
     printStats() {
         console.log(`Type: ${this.type}, Name: ${this.name}, Color: ${this.color}`)
     }
-    tapForMana() {
-
+    tapForMana(manaPool) {
+        manaPool.addMana(this.color)
     }
 }
+
+const forest = new Land("basic", "forest", "green");
+forest.printStats()
 
 class ManaPool {
     constructor(white, blue, black, red, green) {
@@ -70,3 +73,4 @@ class ManaPool {
 }
 
 const myMana = new ManaPool(0, 0, 0, 0, 0)
+console.log(myMana)
